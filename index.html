@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <script>
+      const name = prompt('Enter your name here:');
+if (name !== null) {
+  alert('Hello, ' + name + '! Welcome here.');
+}
+
+const weapon = prompt('Select your weapon: Rock, Paper, or Scissors');
+const computerChoice = Math.random();
+
+let computerWeapon;
+
+if (computerChoice < 0.24) {
+  computerWeapon = 'rock';
+} else if (computerChoice < 0.37) {
+  computerWeapon = 'paper';
+} else {
+  computerWeapon = 'scissor';
+}
+
+if (weapon === 'rock' || weapon === 'paper' || weapon === 'scissor') {
+  alert('Computer chose ' + computerWeapon + '.');
+
+  if (weapon === computerWeapon) {
+    alert('It\'s a tie!');
+  } else if (
+    (weapon === 'rock' && computerWeapon === 'scissor') ||
+    (weapon === 'paper' && computerWeapon === 'rock') ||
+    (weapon === 'scissor' && computerWeapon === 'paper')
+  ) {
+    alert('Congratulations! You win.');
+  } else {
+    alert('Sorry, you lose. Try again.');
+  }
+} else {
+  alert('Enter a valid weapon: Rock, Paper, or Scissors.');
+}
+
+    </script>
+</body>
+</html>
